@@ -1,4 +1,6 @@
-from app.services.forecast_service import get_last_24_loads, predict_next_load
+from app.services.forecast_service import predict_national_load
+from app.services.weather_service import get_weather
+from app.advisory import compute_risk
 
 def generate_advisory(city):
     last_24 = get_last_24_loads(city)

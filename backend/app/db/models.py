@@ -25,11 +25,11 @@ class Advisory(Base):
 class LoadHistory(Base):
     __tablename__ = "load_history"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     city = Column(String, index=True)
-    timestamp = Column(DateTime, index=True)
+    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
     load = Column(Float)
-
+    
 class Region(Base):
     __tablename__ = "regions"
     id = Column(Integer, primary_key=True)
